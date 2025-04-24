@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AversioTools</class>
+ <widget class="QMainWindow" name="AversioTools">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>662</width>
+    <height>581</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Aversio Tools</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>Icon.png</normaloff>Icon.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>120</y>
+      <width>631</width>
+      <height>381</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="IDS">
+     <attribute name="title">
+      <string>IDS Check</string>
+     </attribute>
+     <widget class="QWidget" name="gridLayoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>100</y>
+        <width>611</width>
+        <height>161</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="1">
+        <widget class="QPushButton" name="IDS_Path">
+         <property name="text">
+          <string>Set IDS File</string>
+         </property>
+         <property name="Path" stdset="0">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="IDSFile">
+         <property name="text">
+          <string>IDS File</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="ReportTemplate">
+         <property name="text">
+          <string>Report template</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QPushButton" name="ReportTemplate_Path">
+         <property name="text">
+          <string>Set template</string>
+         </property>
+         <property name="Path" stdset="0">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="Report">
+         <property name="text">
+          <string>Report</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QPushButton" name="Report_path">
+         <property name="text">
+          <string>Set report file</string>
+         </property>
+         <property name="Path" stdset="0">
+          <string/>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QLabel" name="IDSDescription">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>10</y>
+        <width>611</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>IDS Check checks an IFC file against selected IDS file. The result is sorted (unfind items are at the end of file) and is written into .html file based on selected templates. Aversio Tools have templates in 4 languages, I encourage you to copy the one in your language and modify it to your needs.</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignJustify|Qt::AlignmentFlag::AlignTop</set>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="IDSCheck">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>280</y>
+        <width>225</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Run Check</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="ShowIDSReport">
+      <property name="geometry">
+       <rect>
+        <x>340</x>
+        <y>280</y>
+        <width>225</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Show Report</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="ON">
+     <attribute name="title">
+      <string>ON Check</string>
+     </attribute>
+     <widget class="QLabel" name="ONDescription">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>10</y>
+        <width>611</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>ON Check checks an IFC file for manufacturer / model names. It is based on EN 2014/24/EU resp. (Czech law - § 89 odst. 5 zákona č. 134/2016 Sb., o zadávání veřejných zakázek). Result of the check is a .html report file. The IFC is checked based on CSV file with manufacturer names and CSV file wih parameters to search in - based on your IDS.</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignJustify|Qt::AlignmentFlag::AlignTop</set>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QWidget" name="gridLayoutWidget_3">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>70</y>
+        <width>581</width>
+        <height>191</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <item row="0" column="0">
+        <widget class="QLabel" name="CSVFile">
+         <property name="text">
+          <string>CSV with manufacturer / model names</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QPushButton" name="CSVPath">
+         <property name="text">
+          <string>Set CSV</string>
+         </property>
+         <property name="Path" stdset="0">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QPushButton" name="ONTemplatePath">
+         <property name="text">
+          <string>Set template</string>
+         </property>
+         <property name="Path" stdset="0">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="ONTemplate">
+         <property name="text">
+          <string>Report template</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="ONReport">
+         <property name="text">
+          <string>Report</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QPushButton" name="ONReportPath">
+         <property name="text">
+          <string>Set report file</string>
+         </property>
+         <property name="Path" stdset="0">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QPushButton" name="ONParamsPath">
+         <property name="text">
+          <string>Set checked parameters</string>
+         </property>
+         <property name="Path" stdset="0">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="ONParams">
+         <property name="text">
+          <string>Checked parameters</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QPushButton" name="ONCheck">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>280</y>
+        <width>225</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Run check</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="ShowONReport">
+      <property name="geometry">
+       <rect>
+        <x>340</x>
+        <y>280</y>
+        <width>225</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Show report</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="Log">
+     <attribute name="title">
+      <string>Log</string>
+     </attribute>
+     <widget class="QListView" name="AversioToolLog">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>30</y>
+        <width>600</width>
+        <height>241</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="LogDescription">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>611</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Log for cases where something is wrong</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignJustify|Qt::AlignmentFlag::AlignTop</set>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="SaveLog">
+      <property name="geometry">
+       <rect>
+        <x>375</x>
+        <y>280</y>
+        <width>225</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Save log file</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="gridLayoutWidget_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>481</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0">
+      <widget class="QLabel" name="IFCFile">
+       <property name="text">
+        <string>IFC File</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QPushButton" name="IfcPath">
+       <property name="text">
+        <string>Set IFC File</string>
+       </property>
+       <property name="Path" stdset="0">
+        <string/>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QPushButton" name="Github">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>510</y>
+      <width>225</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Github</string>
+    </property>
+    <property name="icon">
+     <iconset theme="go-home"/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Kofi">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>510</y>
+      <width>225</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Kofi</string>
+    </property>
+    <property name="icon">
+     <iconset theme="go-home"/>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>662</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
